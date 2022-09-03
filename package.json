@@ -10,5 +10,8 @@
   },
   "engines": {
     "node": "16.15.1"
+  },
+  "dependencies": {
+    "morgan": "^1.10.0"
   }
 }
