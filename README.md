@@ -19,8 +19,8 @@ El Frontend de esta aplicación se desarrolló usando únicamente HTML, CSS y Ja
 
 
 ### Imagen de ejemplo
-La imagen muestra los resultados para una búsqueda de productos que pertenezcan a las categorías: Bebida Energética, Bebida, Pisco y Vodca; así mismo, que incluyan la letra A en su nombre (también puede ser a minúscula, es indistinto). Y que además cuenten con un descuento del 20%.
-![image](https://user-images.githubusercontent.com/102197665/188470659-1e20a25f-dcf4-467b-bdf0-c08ac765d107.png)
+La imagen muestra los resultados para una búsqueda de productos que pertenezcan a las categorías: Bebida Energética, Bebida, Pisco y Vodca; así mismo, que incluyan la letra A en su nombre (también puede ser a minúscula, es indistinto). Y que además cuenten con un descuento del 20% y un precio entre $2000 y $5000. 
+![image](https://user-images.githubusercontent.com/102197665/188471766-fa0f4401-a4cd-483d-920f-7d7d08707509.png)
 
 ## Back End
 El backend está estructurado usando el ORM sequelize, para hacer una mejor manejo de los datos en el entorno Node JS. el motor usado es MySQL.
