@@ -18,10 +18,15 @@ El Frontend de esta aplicación se desarrolló usando únicamente HTML, CSS y Ja
 [Link de deploy](https://bsales-test.herokuapp.com/)
 
 
-### Imagen de ejemplo
+### Ejemplo de Búsqueda
 La imagen muestra los resultados para una búsqueda de productos que pertenezcan a las categorías: Bebida Energética y Pisco; así mismo, que incluyan la letra A en su nombre (también puede ser a minúscula, es indistinto). Y que además cuenten con un descuento del 20% y un precio entre $1000 y $4000. 
 
 ![image](https://user-images.githubusercontent.com/102197665/188472472-2fecbe8c-3071-4697-88cf-ce053eae3ba2.png)
+
+### No hay coincidencia
+Si existe algún error o no hay coincidencias, se muestra un mensaje apropiado con una alerta amigable para el usuario.
+![image](https://user-images.githubusercontent.com/102197665/188488234-81b809c7-f806-4e55-aee9-b0d7c36fb18a.png)
+
 
 ## Back End
 El backend está estructurado usando el ORM sequelize, para hacer una mejor manejo de los datos en el entorno Node JS. el motor usado es MySQL.
