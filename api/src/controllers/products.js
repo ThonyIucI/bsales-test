@@ -3,12 +3,15 @@ import { modelProduct } from '../models/index.js';
 
 const getProducts = async (req, res) => {
   const { name, category, pMin, pMax, dMin, dMax } = req.body;
-  console.log(req.body);
+
   let response;
   try {
     response = await filterProducs(name, category, pMin, pMax, dMin, dMax);
-    if (!Array.isArray(response))
-      return res.status(response.status).send(response.msg);
+    if (!Array.isArray(response)) {
+      // console.log(response);
+      // return res.send({ msg: response.msg }).status(response.status);
+      return res.status(response.status).send(`${response.msg}`);
+    }
     res.send(response);
   } catch (error) {
     res.status(500).send({ msg: `Could not find any products, ${error}` });
@@ -31,7 +34,7 @@ const getDiscounts = async (req, res) => {
     if (!disconts.length)
       return res
         .status(404)
-        .send({ msg: `There is no any discount available or its cero` });
+        .json({ msg: `There is no any discount available or its cero` });
 
     res.send(disconts);
   } catch (error) {
@@ -66,22 +69,6 @@ const filterProducs = async (name, category, pMin, pMax, dMin, dMax) => {
     return res;
   } catch (error) {
     return { msg: error.message, status: 500 };
-  }
-};
-const filterByCategory = async (category) => {
-  // category should be an array of integers
-  if (!isArrayOfInteger(category))
-    return { msg: 'Bad request, id category should be integer', status: 400 };
-
-  try {
-    let response = await modelProduct.findAll({
-      where: { id: { [Op.or]: category } },
-    });
-    if (!response.length) return { msg: 'Category does not exist', stats: 404 };
-    // If all is ok, return pruducts filter by category
-    res.json(response);
-  } catch (error) {
-    return { msg: 'Internal server error', error, status: 500 };
   }
 };
 
