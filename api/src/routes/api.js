@@ -1,7 +1,13 @@
 import { Router } from 'express';
 import { getCategories } from '../controllers/categories.js';
-import { getProducts } from '../controllers/products.js';
+import {
+  getDiscounts,
+  getPrices,
+  getProducts,
+} from '../controllers/products.js';
 const routes = Router();
-routes.get('/products', getProducts);
+routes.post('/products', getProducts);
+routes.get('/prices', getPrices);
+routes.get('/discounts', getDiscounts);
 routes.get('/categories', getCategories);
 export default routes;
