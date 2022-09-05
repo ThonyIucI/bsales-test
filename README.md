@@ -17,14 +17,14 @@ Puede seleccionarse más de un filtro a la vez, de tal modo que pueda buscar pro
 El Frontend de esta aplicación se desarrolló usando únicamente HTML, CSS y Javascript puro, sin ningún framwork adicional. 
 [Link de deploy](https://bsales-test.herokuapp.com/)
 
-##Back End
+## Back End
 El backend está estructurado usando el ORM sequelize, para hacer una mejor manejo de los datos en el entorno Node JS. el motor usado es MySQL.
 
 Las peticiones se realizan a la ruta: "https://bsales-api.herokuapp.com/api", y se han subdividido en dos controladores principales:
-###Productos:
+### Productos:
 -POST: "/products"-> Devuelve los productos solicitados, recibe por body los filtros solicitados desde el Front, cuando no se especifica todos los filtros se devuelven todos los productos existentes.
 -GET: "/prices"-> Devuelven todos los precios existentes.
 -GET: "/discounts"-> Devuelven todos los descuentos existentes.
 
-###Categorias: 
+### Categorias: 
 -GET: "/categories"-> Develven las categorías de clasificación de los productos. 
