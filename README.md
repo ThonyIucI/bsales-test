@@ -22,9 +22,9 @@ El backend está estructurado usando el ORM sequelize, para hacer una mejor mane
 
 Las peticiones se realizan a la ruta: "https://bsales-api.herokuapp.com/api", y se han subdividido en dos controladores principales:
 ### Productos:
--POST: "/products"-> Devuelve los productos solicitados, recibe por body los filtros solicitados desde el Front, cuando no se especifica todos los filtros se devuelven todos los productos existentes.
--GET: "/prices"-> Devuelven todos los precios existentes.
--GET: "/discounts"-> Devuelven todos los descuentos existentes.
+- POST: "/products"-> Devuelve los productos solicitados, recibe por body los filtros solicitados desde el Front, cuando no se especifica todos los filtros se devuelven todos los productos existentes.
+- GET: "/prices"-> Devuelven todos los precios existentes.
+- GET: "/discounts"-> Devuelven todos los descuentos existentes.
 
 ### Categorias: 
--GET: "/categories"-> Develven las categorías de clasificación de los productos. 
+- GET: "/categories"-> Develven las categorías de clasificación de los productos. 
