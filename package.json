@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm start --prefix api",
     "install-api": "cd api && npm install && cd .. ",
-    "heroku-postbuild": "npm run install-client && npm run install-api"
+    "heroku-postbuild": "npm run install-api"
   },
   "engines": {
     "node": "16.15.1"
