@@ -7,7 +7,11 @@ const url = 'http://localhost:3001/api',
   category = document.getElementById('template-category').content,
   fragmentCategory = document.createDocumentFragment();
 const buttonSearch = document.getElementById('buttonSearch'),
-  inputSearch = document.getElementById('inputSearch');
+  inputSearch = document.getElementById('inputSearch'),
+  minPrice = document.getElementById('minPrice'),
+  maxPrice = document.getElementById('maxPrice'),
+  minDisc = document.getElementById('minDisc'),
+  maxDisc = document.getElementById('maxDisc');
 //   formCheckInput = document.getElementsByClassName('checkbox');
 document.addEventListener('DOMContentLoaded', async () => {
   addProduct(await getProducts());
@@ -25,10 +29,9 @@ const getProducts = async () => {
       body: JSON.stringify(filters),
     });
     const data = await res.json();
-    console.log(filters);
-    console.log(data.length);
     return data;
   } catch (error) {
+    alert(json.stringify(error.msg));
     console.log(error);
   }
 };
@@ -38,11 +41,15 @@ const getCategories = async () => {
     const data = await res.json();
     return data;
   } catch (error) {
+    alert(json.stringify(error.msg));
     console.log(error);
   }
 };
 
 const addProduct = (data) => {
+  if (!data.length) {
+    alert('No existen coincidencias');
+  }
   data?.forEach((p) => {
     cardProduct
       .querySelector('img')
@@ -75,6 +82,7 @@ const addCategory = (data) => {
   });
   categories.appendChild(fragmentCategory);
 };
+
 // Filters
 buttonSearch.addEventListener('click', (e) => {
   e.preventDefault();
@@ -91,12 +99,20 @@ categories.addEventListener('click', (e) => {
     if (e.target.value == 0) removeCategoryToFilters(e.target.id[3]);
   }
 });
-const searchByName = async (e) => {
-  //   addProduct(await getProducts());
-};
+minPrice.addEventListener('change', (e) => {
+  filters.pMin = e.target.value;
+});
+maxPrice.addEventListener('change', (e) => {
+  filters.pMax = e.target.value;
+});
+minDisc.addEventListener('change', (e) => {
+  filters.dMin = e.target.value;
+});
+maxDisc.addEventListener('change', (e) => {
+  filters.dMax = e.target.value;
+});
 
 const updateCards = async () => {
-  console.log(filters);
   products.innerHTML = '';
   addProduct(await getProducts());
 };
